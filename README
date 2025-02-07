@@ -1,0 +1,34 @@
+------------------------------------------------------
+LCD 1602-A library and example for Raspberry Pi Pico 2
+------------------------------------------------------
+version: 0.1   alpha
+02.2025 
+
+Hardware	: Raspberry Pi Pico 2 , LCD 1602-A. Tested on a RP Pico 2w with LCD 1602-A 5.5 featuring 2-rows of 16 characters, back-lit display. 
+Features	: communication with the device over the PIO interface, text, custom characters. 
+Language	: C
+
+---------------
+Prerequisites
+---------------	
+You need the Pico SDK library and a fair understanding of how to build Pico SDK projects together with PIO assembler.
+
+----------------
+Hardware Setup
+----------------
+
+* Documentation for LCD 1602-A
+
+PDF file (other versions are also available online): https://www.openhacks.com/uploadsproductos/eone-1602a1.pdf
+
+* Powering the display
+
+Refer to the documentation for powering the LCD. Mind the contrast setup via the V0 pin. If contrast is too high or too low you won't be able to see anything. I recommend using a potentiometer of 20 KOhm. For backlight LED some models may be connected directly others may need  a resistor. Find a connection diagram appropriate for your model.  
+
+* Data pins
+
+Refer to the library file LCD1602A.h section "Pin Configuration".
+
+
+
+

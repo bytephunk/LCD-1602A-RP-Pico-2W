@@ -1,0 +1,19 @@
+.program LCD_1602_COMM
+	;we expect a pulse freq. 20khz ( 50 ns period) 
+	.define PW 10 ; pulse width in cycles
+	set pindirs 1
+	
+	.wrap_target 
+	start:
+	set pins 0  ;clock low
+	pull block
+	OUT pindirs 10 ; first 10 bits for pindirs
+	OUT pins 10 
+	set pins 1 [PW]; keep clock high for pulse width
+	JMP PIN read ; RW pin is also a jump pin
+	JMP start
+	read:
+	IN PINS 8 
+	push block	
+	.wrap
+
